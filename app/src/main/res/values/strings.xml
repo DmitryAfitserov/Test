@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="control_position">Control Position</string>
+    <string name="set_page_as_default">Set this page as default</string>
+    <string name="day_night_temp">Day %1$s°C/Night %2$s°C</string>
+    <string name="pressure">Pressure %1$s m. of. m.</string>
+    <string name="humidity">Humidity %1$s</string>
+    <string name="speed_wind">Speed wind %1$s m/s </string>
+    <string name="weather">Weather</string>
+    <string name="search_city">Search city</string>
+    <string name="used_cities">Used cities:</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="apply">Apply</string>
+    <string name="choose_city_from_popup">Choose city from pop-up list</string>
+    <string name="city_is_exist">Selected city exist in list</string>
+    <string name="geocoder_service_not_availablet">GeoCoder Service not Available, restart your device</string>
+    <string name="minsk">Minsk</string>
+    <string name="moscow">Moscow</string>
+    <string name="error_internet_connection">Error internet connection</string>
+    <string name="error_loading_data">Error loading data</string>
+    <string name="weather_for_weak">Weather for weak</string>
+    <string name="tempetarute_c">%1$s°C</string>
+    <string name="max_temp">Max temperature %1$s°C</string>
+    <string name="min_temp">Min temperature %1$s°C</string>
+    <string name="visibility">Visibility %1$s m.</string>
+
+
+</resources>

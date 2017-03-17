@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    >
+        <data>
+                <variable name="list" type="com.example.developer.test.model.several.List"/>
+                <variable name="fragment" type="com.example.developer.test.fragments.AdapterRWFragment"/>
+        </data>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            card_view:cardCornerRadius="4dp"
+            card_view:contentPadding="7dp"
+            card_view:elevation="0dip"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintLeft_toLeftOf="parent"
+            card_view:layout_constraintRight_toRightOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_gravity="end"
+                    android:text="@{fragment.getDt(list.dt)}"/>
+
+                <TextView
+                    android:id="@+id/descrip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:text="@{list.weather.get(0).description}"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/max_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    android:text='@{@string/day_night_temp((Integer)Math.round(list.temp.day), (Integer)Math.round(list.temp.night))}'
+                    />
+
+                <TextView
+                    android:id="@+id/pressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:text='@{@string/pressure((Integer)Math.round(list.pressure))}'
+                    />
+
+                <TextView
+                    android:id="@+id/humidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:text='@{@string/humidity((Integer)Math.round(list.humidity))}'
+                    />
+
+                <TextView
+                    android:id="@+id/speed_wind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:text='@{@string/speed_wind((Integer)Math.round(list.speed))}'
+                    />
+
+                </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+
+</layout>

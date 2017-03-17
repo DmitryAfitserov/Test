@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.developer.test.MainActivity"
+    >
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="isVisibleProgressBar"
+            type="boolean"/>
+        <variable
+            name="isVisibleTabLayout"
+            type="boolean"/>
+        <variable
+            name="titleText"
+            type="String"/>
+    </data>
+
+<android.support.constraint.ConstraintLayout
+
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ProgressBar
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="@{isVisibleProgressBar ? View.VISIBLE : View.GONE}"
+        android:id="@+id/progress_bar"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/view_pager"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/view_pager"
+        app:layout_constraintTop_toTopOf="@+id/view_pager"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_pager"
+        android:layout_marginBottom="8dp"
+
+        />
+
+    <android.support.v7.widget.Toolbar
+        android:title="@{titleText}"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:id="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@color/screen_background_transparent">
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        app:tabMode="fixed"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@android:color/transparent"
+        android:visibility="@{isVisibleTabLayout ? View.VISIBLE : View.GONE}"
+        app:tabIndicatorHeight="0dp"
+        app:tabSelectedTextColor="@android:color/transparent"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="32dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/tab_layout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0">
+
+    </android.support.v4.view.ViewPager>
+
+
+</android.support.constraint.ConstraintLayout>
+</layout>
